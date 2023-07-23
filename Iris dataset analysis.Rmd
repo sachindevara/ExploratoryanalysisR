@@ -1,0 +1,111 @@
+---
+title: "Irisdataset"
+author: "sachin reddy"
+date: "13/12/2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+statistical analysis of iris dataset
+
+```{r}
+library(datasets)
+data<-data.frame(iris)
+str(data)
+```
+
+
+summary of iris dataset
+
+```{r}
+summary(data)
+
+```
+mean of sepal length and petal length respectively
+```{r}
+mean(data$Sepal.Length)
+
+mean(data$Petal.Length)
+
+```
+median of sepal width and petal width  respectively
+
+```{r}
+median(data$Sepal.Width)
+
+median(data$Petal.Width)
+
+```
+#range of sepal length
+
+```{r}
+range<-function(n){
+  range1=max(n)-min(n)
+  return(range1)
+}
+range(data$Sepal.Length)
+
+```
+dispersion measures
+#quantiles and inter quantile of sepals
+
+```{r}
+quantile(data$Sepal.Length)
+
+quantile(data$Sepal.Width)
+
+IQR(data$Sepal.Length)
+
+IQR(data$Sepal.Width)
+
+```
+variance and standard deviation
+```{r }
+var(data$Sepal.Length)
+sd(data$Sepal.Width)
+var(data$Petal.Length)
+
+```
+table  and sort of sepal width
+```{r }
+tab<-table(data$Sepal.Width)
+tab
+
+sort(tab,decreasing=TRUE)
+
+
+```
+
+## Including Plots
+
+#boxplotting
+
+```{r }
+boxplot(data,main='species')
+
+```
+
+#barplot of sepal length
+```{r }
+barplot(head(data$Sepal.Length))
+
+```
+
+
+
+
+
+
+#creating histogram of sepal width
+```{r }
+hist(data$Sepal.Width,main='species',xlab = 'species width')
+
+
+```
+
+#plotting of iris data
+
+```{r}
+plot(data$Petal.Length,data$Petal.Width,main='plotting of iris data')
+```
